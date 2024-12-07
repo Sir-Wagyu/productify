@@ -21,7 +21,7 @@
             <input type="text" name="username" placeholder="Username" class="border p-1 w-full my-2">
             <input type="text" name="email" placeholder="Email" class="border p-1 w-full my-2">
             <input type="password" name="password" id="password" placeholder="Password" class="border p-1 w-full my-2">
-            <button type="submit" class="bg-blue-500 text-white p-2 w-full my-2">Login</button>
+            <button type="submit" class="bg-blue-500 text-white p-2 w-full my-2">Register</button>
         </form>
         <p class="mt-3">Sudah punya akun? <span class="text-blue-500"><a href="<?php echo base_url('/') ?>">Login</a></span></p>
     </div>

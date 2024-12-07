@@ -31,6 +31,7 @@ class Auth extends CI_Controller
 
 			if ($data->password == $password) {
 				$array = array(
+					'id' => $data->id,
 					'username' => $data->username,
 					'nama' => $data->nama,
 					'email' => $data->email,
@@ -66,6 +67,7 @@ class Auth extends CI_Controller
 			'email' => $email,
 			'password' => $password
 		);
+
 
 		$sql = "select * from users where username = ? and email = ?";
 		$query = $this->db->query($sql, array($username, $email));
