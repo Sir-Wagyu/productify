@@ -51,4 +51,34 @@ class Dashboard extends CI_Controller
         $this->db->insert('tasks', $data);
         redirect('dashboard', 'refresh');
     }
+
+    public function editTask($id)
+    {
+        $judul = $this->input->post('judul');
+        $deskripsi = $this->input->post('deskripsi');
+        $prioritas = $this->input->post('prioritas');
+        $deadline = $this->input->post('deadline');
+        $kategori = $this->input->post('kategori');
+        $status = $this->input->post('status');
+
+        $data = array(
+            'judul' => $judul,
+            'deskripsi' => $deskripsi,
+            'prioritas' => $prioritas,
+            'deadline' => $deadline,
+            'kategori' => $kategori,
+            'status' => $status
+        );
+
+        $this->db->where('id', $id);
+        $this->db->update('tasks', $data);
+        redirect('dashboard', 'refresh');
+    }
+
+    public function hapusTask($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('tasks');
+        redirect('dashboard', 'refresh');
+    }
 }

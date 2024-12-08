@@ -9,4 +9,11 @@ class tasks_model extends CI_Model
         $query = $this->db->get('tasks'); // Tabel `tasks`
         return $query->result(); // Kembalikan sebagai array objek
     }
+
+    public function getTaskById($id_task)
+    {
+        $this->db->where('id', $id_task); // Ambil data sesuai ID tugas
+        $query = $this->db->get('tasks'); // Tabel `tasks`
+        return $query->row(); // Kembalikan sebagai objek
+    }
 }
